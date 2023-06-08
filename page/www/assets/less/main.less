@@ -1,0 +1,44 @@
+@mainColor: rgba(238,106,0,255);
+
+@import "pizza/pizza-card";
+@import "pizza/top-nav.less";
+@import "pizza/cart-wrapper.less";
+@import "pizza/cart.less";
+
+body {
+  margin: 0;
+  display: flex;
+  background-color: rgba(255, 255, 245, 255);
+}
+
+#left-side {
+  padding-top: 100px;
+  float: left;
+  max-width: calc(~'100% - 340px');
+}
+
+#right-side {
+  flex-shrink: 0;
+  float: right;
+  width: 340px; 
+  background-color: rgba(245, 245, 245, 255);
+  box-shadow: -7px -5px 7px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2000;
+}
+
+@media (max-width: 720px) {
+  #left-side {
+    width: 720px;
+  }
+}
+
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+
