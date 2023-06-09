@@ -1,0 +1,114 @@
+.order-list-text {
+    display: flexbox;
+    padding: 10px;
+}
+
+.ordered-pizza-name {
+    color: @mainColor;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 0;
+}
+
+.order-list-item {
+    display: flex;
+    align-self: center;
+    height: fit-content;
+    height: fit-content;
+    background-color: white;
+}
+
+.ordered-pizza-img {
+    position: relative;
+    right: -15%;
+    margin: 0;
+    height: 130px;
+}
+
+#order-list > div > div > div.features > div.svg-container {margin: 10px 5px 10px 5px; }
+
+#order-list > div > div > div.features > div.svg-container > img {margin: 0;}
+
+.price-config .amount-config, .features {display: flex;}
+
+.round-button {
+    width: 30px;
+    height: 30px;
+    margin: 0 7px 0 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    color: #e0e0e0;
+    font-size: 25px;
+    border: 0;
+}
+
+.delete {
+    box-shadow: rgba(191,39,40,255) 0 -4px 0 inset;
+    background-color: rgba(219,40,40,255);
+}
+
+.add {
+    box-shadow: rgba(33,163,64,255) 0 -4px 0 inset;
+    background-color: rgba(34,186,70,255);
+}
+
+.remove {
+    box-shadow: rgba(217,217,217,255) 0 -4px 0 inset;
+    background-color: rgba(240,240,240,255);
+    border: 1px solid rgba(217,217,217,255);
+    color: @mainColor;
+}
+
+.delete:hover, .add:hover, .remove:hover{
+    transform: translateY(-2px);
+    transition:
+      transform
+      250ms
+      cubic-bezier(.3, .7, .4, 1.5);
+}
+
+.delete:active, .add:active, .remove:active {
+    transform: translateY(2px);
+    transition:
+      transform
+      250ms
+      cubic-bezier(.3, .7, .4, 1.5);
+}
+
+.disabled {
+    opacity: 0.5;
+}
+
+.disabled:active, .disabled:hover {
+    transform: none;
+}
+
+.price-config {
+    display: flex;
+    align-items: center;
+  }
+  
+  .order-list-price {
+    margin-right: 10px;
+  }
+  
+  .amount-config {
+    display: flex;
+    align-items: center;
+  }
+  
+  .button-container {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+  }
+
+  #order-list > div > div > div.price-config > span {
+    font-size: 20px;
+    font-weight: 600;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    white-space: nowrap;
+}

@@ -25,9 +25,47 @@
           <div id="cart"></div>
         </div>
       </div>
-      <div id="right-side">oki</div>
+      <div id="right-side">
+        <div id="order-panel">
+          <span class="order-label">Замовлення</span>
+          <div class="yellow-counter">2</div>
+          <a href="#" class="clear-order">Очистити замовлення</a>
+        </div>
+        <div id="order-list">
+          <div class="order-list-item">
+            <div class="order-list-text">
+              <span class="ordered-pizza-name">Імпреза</span>
+              <div class="features">
+                <div class="svg-container">
+                  <img src="assets/images/size-icon.svg" alt="size-icon" />
+                  <span>30</span>
+                </div>
+                <div class="svg-container">
+                  <img src="assets/images/weight.svg" alt="size-icon" />
+                  <span>460</span>
+                </div>
+              </div>
+              <div class="price-config">
+                <span class="order-list-price">189 грн</span>
+                <div class="amount-config">
+                  <button class="round-button add">-</button>
+                  <span class="order-counter">1</span>
+                  <button class="round-button delete">+</button>
+                  <button class="round-button remove">x</button>
+                </div>
+              </div>
+            </div>
+            <img
+              src="assets/images/pizza_7.jpg"
+              alt="small order pizza"
+              class="ordered-pizza-img"
+            />
+          </div>
+        </div>
+      </div>
     </article>
 
     <script src="scripts/init.js"></script>
+    <script src="scripts/order_scripts.js"></script>
   </body>
 </html>

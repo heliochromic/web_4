@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", function () {
   fetch("./scripts/data.json")
     .then((response) => response.json())
     .then((data) => {
-      // Loop through each pizza object in the JSON data
       data.forEach((pizza) => {
         // Create a new pizza card element
         const card = document.createElement("div");
@@ -73,5 +72,3 @@ document.addEventListener("DOMContentLoaded", function () {
       console.error("Error:", error);
     });
 });
-
-console.log("hello world");

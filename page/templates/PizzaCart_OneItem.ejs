@@ -1,9 +1,9 @@
 <div>
-    <%= pizza.title %> (<%= size %>)
-    <div>Ціна: <%= pizza[size].price %> грн.</div>
-    <div>
-        <button class="btn btn-danger minus">-</button>
-        <span class="label label-default"><%= quantity %></span>
-        <button class="btn btn-success plus">+</button>
-    </div>
+  <%= pizza.title %> (<%= size %>)
+  <div>Ціна: <%= pizza[size].price %> грн.</div>
+  <div>
+    <button class="btn-minus">-</button>
+    <span class="order-counter"><%= quantity %></span>
+    <button class="btn-plus">+</button>
+  </div>
 </div>

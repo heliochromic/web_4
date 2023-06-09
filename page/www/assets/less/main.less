@@ -4,6 +4,8 @@
 @import "pizza/top-nav.less";
 @import "pizza/cart-wrapper.less";
 @import "pizza/cart.less";
+@import "pizza/order.less";
+@import "pizza/order-list-item.less";
 
 body {
   margin: 0;
@@ -14,13 +16,13 @@ body {
 #left-side {
   padding-top: 100px;
   float: left;
-  max-width: calc(~'100% - 340px');
+  max-width: calc(~'100% - 370px');
 }
 
 #right-side {
   flex-shrink: 0;
   float: right;
-  width: 340px; 
+  width: 370px; 
   background-color: rgba(245, 245, 245, 255);
   box-shadow: -7px -5px 7px rgba(0, 0, 0, 0.2);
   position: fixed;
@@ -28,6 +30,9 @@ body {
   right: 0;
   bottom: 0;
   z-index: 2000;
+  display: block;
+  justify-content: center; 
+  flex-wrap: wrap;
 }
 
 @media (max-width: 720px) {
