@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         <p>${contentString}</p>
                         </div>
                         <div class="order-buttons">
-                        <div class="buy_button">
+                        <div class="buy_button small_pizza">
                           <div class="svg-container">
                             <img src="assets/images/size-icon.svg" alt="size-icon" />
                             ${pizza.small_size.size}
@@ -42,9 +42,9 @@ document.addEventListener("DOMContentLoaded", function () {
                             <div class="price">${pizza.small_size.price}</div>
                             <div class="grn">грн</div>
                           </div>
-                          <button class="add-to-order">Купити</button>
+                          <button onclick="addItemToOrder(this)" class="add-to-order">Купити</button>
                         </div>
-                        <div class="buy_button">
+                        <div class="buy_button big_pizza">
                           <div class="svg-container">
                             <img src="assets/images/size-icon.svg" alt="size-icon" />
                             ${pizza.big_size.size}
@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             <div class="price">${pizza.big_size.price}</div>
                             <div class="grn">грн</div>
                           </div>
-                          <button class="add-to-order">Купити</button>
+                          <button onclick="addItemToOrder(this)" class="add-to-order">Купити</button>
                         </div>
                       </div>
                     </p>
