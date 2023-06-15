@@ -7,7 +7,6 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, minimum-scale=1.0"
     />
-
     <title>Pizza</title>
     <link rel="stylesheet/less" type="text/css" href="assets/less/main.less" />
     <!-- LESS JavaScript компілятор -->
@@ -28,39 +27,20 @@
       <div id="right-side">
         <div id="order-panel">
           <span class="order-label">Замовлення</span>
-          <div class="yellow-counter">2</div>
-          <a href="#" class="clear-order">Очистити замовлення</a>
+          <div id="yellow-counter">0</div>
+          <a href="javascript:removeAllItems()" class="clear-order"
+            >Очистити замовлення</a
+          >
         </div>
-        <div id="order-list">
-          <div class="order-list-item">
-            <div class="order-list-text">
-              <span class="ordered-pizza-name">Імпреза</span>
-              <div class="features">
-                <div class="svg-container">
-                  <img src="assets/images/size-icon.svg" alt="size-icon" />
-                  <span>30</span>
-                </div>
-                <div class="svg-container">
-                  <img src="assets/images/weight.svg" alt="size-icon" />
-                  <span>460</span>
-                </div>
-              </div>
-              <div class="price-config">
-                <span class="order-list-price">189 грн</span>
-                <div class="amount-config">
-                  <button class="round-button add">-</button>
-                  <span class="order-counter">1</span>
-                  <button class="round-button delete">+</button>
-                  <button class="round-button remove">x</button>
-                </div>
-              </div>
-            </div>
-            <img
-              src="assets/images/pizza_7.jpg"
-              alt="small order pizza"
-              class="ordered-pizza-img"
-            />
+        <div id="order-list"></div>
+        <div id="bill">
+          <div id="bill-pay">
+            <div id="bill-pay-label">Сума замовлення</div>
+            <div id="bill-pay-sum">0 грн</div>
           </div>
+          <button class="add-to-order pay-for-order" type="button">
+            Замовити
+          </button>
         </div>
       </div>
     </article>
