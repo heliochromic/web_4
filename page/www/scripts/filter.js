@@ -1,5 +1,7 @@
+var pizzaCardAmount = 0;
+
 function changeFilter(element) {
-  console.log("okie");
+  pizzaCardAmount = 0;
   let property = element.closest(".filter-property");
   const content = property.getAttribute("content");
 
@@ -13,33 +15,31 @@ function changeFilter(element) {
   fetch("./scripts/data.json")
     .then((response) => response.json())
     .then((data) => {
-      for (let pizza of data) {
-        const contentList = Object.keys(pizza["content"]);
-        if (contentList.includes(content)) {
-          for (let pizzaCard of document.querySelectorAll(".pizza-panel")) {
-            if (
-              pizzaCard.querySelector(".caption > h3").textContent ==
-              pizza.title
-            ) {
-              pizzaCard.style.display = "block";
-            }
-          }
-        }
-      }
+      for (let pizzaCard of document.querySelectorAll(".pizza-panel")) {
+        pizzaCard.style.display = "none";
+        const pizzaTitle = pizzaCard.querySelector(".caption > h3").textContent;
 
-      for (let pizza of data) {
-        const contentList = Object.keys(pizza["content"]);
-        if (!contentList.includes(content)) {
-          for (let pizzaCard of document.querySelectorAll(".pizza-panel")) {
-            if (
-              pizzaCard.querySelector(".caption > h3").textContent ==
-              pizza.title
-            ) {
-              pizzaCard.style.display = "none";
+        for (let pizza of data) {
+          const contentList = Object.keys(pizza["content"]);
+
+          if (content == "all" || contentList.includes(content)) {
+            if (pizza.title === pizzaTitle) {
+              pizzaCard.style.display = "block";
+              pizzaCardAmount++;
+              break;
+            }
+          } else if (content == "vegan") {
+            if (pizza.type == "Веган піца" && pizza.title === pizzaTitle) {
+              pizzaCard.style.display = "block";
+              pizzaCardAmount++;
+              break;
             }
           }
+
+          //when i click on button with content "vegan" i want to make pizzaCard.style.display = "block"; for object that corresponds to div and has pizza.type == "Веган піца"
         }
       }
+      document.querySelector("#main-pay-sum").innerText = pizzaCardAmount;
     })
     .catch((error) => {
       console.error("Error in orderlist:", error);
