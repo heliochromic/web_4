@@ -1,0 +1,61 @@
+#all-orders{
+    height: 60px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    #main-pay-label {
+        font-size:32px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-weight: 500;
+        margin: 20px 0 20px 10px;
+        height: fit-content;
+    }
+
+    #main-pay-sum {
+        margin: 24px 0 24px 5px;
+        width: 30px;
+        height: 30px;
+        background-color: @mainColor ;
+        border-radius: 100%;
+        color: rgb(224,224,224);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        font-size: 19px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-weight: 700px;
+    }
+}
+
+#filter {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width:100%
+}
+
+.filter-property {
+    margin:15px;
+    padding: 15px;
+    color: @mainColor;
+    border-radius: 10px;
+}
+
+.active-property {
+    background-color: @mainColor;
+    color:#fffff5;
+}
+
+.filter-property:hover {
+    background-color:rgba(238,106,0,0.5);
+    color: #fffff5;
+}
+
+.active-property:hover {
+    background-color: @mainColor;
+    color: #fffff5;
+}

@@ -63,14 +63,13 @@ function addItemToOrder(button) {
           />
           `;
 
-        // Check if the item is already in the order list
         if (isItemAlreadyInOrderList(itemElement)) {
           console.log("Item is already in the order list");
           return;
         }
 
         order.appendChild(itemElement);
-        // Create a local storage object for the current pizza item
+
         var pizzaObject = {
           title: pizza.title,
           sizeLabel: sizeLabel,
@@ -123,7 +122,6 @@ function isSameItem(item1, item2) {
   return orderedPizzaName1 === orderedPizzaName2;
 }
 
-// On page load, check if there are saved pizza items in local storage
 window.addEventListener("load", function () {
   var generalAmount = 0;
   var generalPrice = 0;
@@ -131,7 +129,6 @@ window.addEventListener("load", function () {
   for (let i = 0; i < localStorage.length; i++) {
     const key = localStorage.key(i);
     const pizzaObjectJSON = localStorage.getItem(key);
-    //console.log(key, pizzaObjectJSON);
 
     let itemElement = document.createElement("div");
     itemElement.classList.add("order-list-item");
@@ -168,7 +165,6 @@ window.addEventListener("load", function () {
           />
         `;
 
-    // Append the item element to the order list container
     const order = document.getElementById("order-list");
     order.appendChild(itemElement);
 
@@ -186,14 +182,11 @@ function plusItem(button) {
   const listItem = button.closest(".order-list-item");
   const pizzaName = listItem.querySelector(".ordered-pizza-name").innerText;
 
-  // Get the pizza object from local storage
   const pizzaObjectJSON = localStorage.getItem(pizzaName);
   const pizzaObject = JSON.parse(pizzaObjectJSON);
 
-  // Update the pizza amount
   pizzaObject.amount += 1;
 
-  //document.getElementById("yellow-counter").innerHTML
   const currentAmount = parseInt(
     document.getElementById("yellow-counter").innerHTML
   );
@@ -220,11 +213,9 @@ function minusItem(button) {
   const listItem = button.closest(".order-list-item");
   const pizzaName = listItem.querySelector(".ordered-pizza-name").innerText;
 
-  // Get the pizza object from local storage
   const pizzaObjectJSON = localStorage.getItem(pizzaName);
   const pizzaObject = JSON.parse(pizzaObjectJSON);
 
-  // Decrease the pizza amount
   if (pizzaObject.amount > 1) {
     pizzaObject.amount -= 1;
 
@@ -272,9 +263,7 @@ function removeItem(button) {
   document.getElementById("bill-pay-sum").innerHTML =
     parseInt(currentPrice - pizzaObject.price * pizzaObject.amount) + " грн";
 
-  // Remove the pizza from local storage
   localStorage.removeItem(pizzaName);
-  // Remove the list item from the DOM
   listItem.remove();
 }
 

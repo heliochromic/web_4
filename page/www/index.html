@@ -20,6 +20,56 @@
             <h1>Top Navigation</h1>
           </div>
         </nav>
+        <header>
+          <div id="all-orders">
+            <div id="main-pay-label">Усі піци</div>
+            <div id="main-pay-sum">0</div>
+          </div>
+          <div id="filter">
+            <div
+              class="filter-property active-property"
+              content="all"
+              onclick="changeFilter(this)"
+            >
+              Усі
+            </div>
+            <div
+              class="filter-property"
+              content="meat"
+              onclick="changeFilter(this)"
+            >
+              М'ясні
+            </div>
+            <div
+              class="filter-property"
+              content="pineapple"
+              onclick="changeFilter(this)"
+            >
+              З анасами
+            </div>
+            <div
+              class="filter-property"
+              content="mushroom"
+              onclick="changeFilter(this)"
+            >
+              З грибами
+            </div>
+            <div
+              class="filter-property"
+              content="ocean"
+              onclick="changeFilter(this)"
+            >
+              З морепродуктами
+            </div>
+            <div
+              class="filter-property"
+              content="vegan"
+              onclick="changeFilter(this)"
+            >
+              Веган
+            </div>
+          </div>
+        </header>
         <div id="cart-wrapper">
           <div id="cart"></div>
         </div>
@@ -47,5 +97,6 @@
 
     <script src="scripts/init.js"></script>
     <script src="scripts/order_scripts.js"></script>
+    <script src="scripts/filter.js"></script>
   </body>
 </html>
