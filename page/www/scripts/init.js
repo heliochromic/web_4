@@ -18,6 +18,8 @@ document.addEventListener("DOMContentLoaded", function () {
         const contentString =
           content.charAt(0).toUpperCase() + content.slice(1);
 
+        //<div class="badge">Нове</div>
+
         card.innerHTML = `
           <div class="pizza-card">
             <img src="${pizza.icon}" />
@@ -27,40 +29,75 @@ document.addEventListener("DOMContentLoaded", function () {
               <p>${contentString}</p>
             </div>
             <div class="order-buttons">
-              <div class="buy_button small_pizza">
-                <div class="svg-container">
-                  <img src="assets/images/size-icon.svg" alt="size-icon" />
-                  ${pizza.small_size.size}
-                </div>
-                <div class="svg-container">
-                  <img src="assets/images/weight.svg" alt="size-icon" />
-                  ${pizza.small_size.weight}
-                </div>
-                <div class="price-container">
-                  <div class="price">${pizza.small_size.price}</div>
-                  <div class="grn">грн</div>
-                </div>
-                <button onclick="addItemToOrder(this)" class="add-to-order" data-id="${pizza.id}">Купити</button>
-              </div>
-              <div class="buy_button big_pizza">
-                <div class="svg-container">
-                  <img src="assets/images/size-icon.svg" alt="size-icon" />
-                  ${pizza.big_size.size}
-                </div>
-                <div class="svg-container">
-                  <img src="assets/images/weight.svg" alt="size-icon" />
-                  ${pizza.big_size.weight}
-                </div>
-                <div class="price-container">
-                  <div class="price">${pizza.big_size.price}</div>
-                  <div class="grn">грн</div>
-                </div>
-                <button onclick="addItemToOrder(this)" class="add-to-order" data-id="${pizza.id}">Купити</button>
-              </div>
+              
             </div>
           </div>
         `;
 
+        const sizeList = Object.keys(pizza);
+        console.log();
+
+        const orderButtonsContainer = card.querySelector(".order-buttons");
+
+        if (sizeList.includes("small_size")) {
+          const smallSize = document.createElement("div");
+          smallSize.classList.add("buy_button");
+          smallSize.classList.add("small_pizza");
+          smallSize.innerHTML = `
+          <div class="svg-container">
+            <img src="assets/images/size-icon.svg" alt="size-icon" />
+            ${pizza.small_size.size}
+          </div>
+          <div class="svg-container">
+            <img src="assets/images/weight.svg" alt="size-icon" />
+            ${pizza.small_size.weight}
+          </div>
+          <div class="price-container">
+            <div class="price">${pizza.small_size.price}</div>
+            <div class="grn">грн</div>
+          </div>
+          <button onclick="addItemToOrder(this)" class="add-to-order" data-id="${pizza.id}">Купити</button>
+          `;
+          orderButtonsContainer.appendChild(smallSize);
+        }
+
+        if (sizeList.includes("big_size")) {
+          const smallSize = document.createElement("div");
+          smallSize.classList.add("buy_button");
+          smallSize.classList.add("big_pizza");
+          smallSize.innerHTML = `
+          <div class="svg-container">
+            <img src="assets/images/size-icon.svg" alt="size-icon" />
+            ${pizza.big_size.size}
+          </div>
+          <div class="svg-container">
+            <img src="assets/images/weight.svg" alt="size-icon" />
+            ${pizza.big_size.weight}
+          </div>
+          <div class="price-container">
+            <div class="price">${pizza.big_size.price}</div>
+            <div class="grn">грн</div>
+          </div>
+          <button onclick="addItemToOrder(this)" class="add-to-order" data-id="${pizza.id}">Купити</button>
+          `;
+          orderButtonsContainer.appendChild(smallSize);
+        }
+
+        if (pizza.is_popular) {
+          let newBadge = document.createElement("div");
+          newBadge.classList.add("badge");
+          newBadge.style.backgroundColor = "green";
+          newBadge.innerHTML = "Популярна";
+          card.querySelector(".pizza-card").appendChild(newBadge);
+        }
+
+        if (pizza.is_new) {
+          let newBadge = document.createElement("div");
+          newBadge.classList.add("badge");
+          newBadge.style = "green";
+          newBadge.innerHTML = "Новa";
+          card.querySelector(".pizza-card").appendChild(newBadge);
+        }
         // Append the pizza card to the cart
         cart.appendChild(card);
       });

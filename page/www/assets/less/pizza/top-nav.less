@@ -38,35 +38,53 @@
 
 #bookmark-1 {
   position: absolute;
-  top: -30px;
-  left: -20px;
+  top: -40px;
+  left: -30px;
   width: 180px;
   z-index: 2;
 }
 
 #bookmark-2 {
   position: fixed;
-  top: 700px;
-  left: -20px;
+  bottom: -20px; /* Adjust the value as needed */
+  left: -30px;
   width: 180px;
   z-index: 1000;
   transform: rotate(180deg);
 }
 
-#rect {
+#bottom-sale {
+  position: fixed;
+
+  top: 90%; /* Adjust the value as needed */
+  left: -30px;
+  width: 180px;
+  z-index: 1005;
+}
+
+#bottom-sale h3 {
+  margin: 0;
+  font-size: 20px;
+  color: white;
+  font-weight: 700;
+}
+
+.rect {
   position: absolute;
   top: 10px;
-  left: 35px;
+  left: 25px;
   z-index: 3;
-  font-size: 16px;
+  font-size: 12px;
 
   h3 {
   margin: 0;
-  line-height: 1.2;
+  line-height: 0.8;
   color: white;
-  font-weight: 400;
+  font-weight: 700;
 }
 }
+
+
 
 .bottomText{
   color: rgb(255, 255, 255);
@@ -82,7 +100,11 @@
   text-decoration: none;
 }
 
-
+hr.dashed {
+  border-top: 3px solid white;
+  width: 50%;
+  text-decoration: none;
+}
 
 @media (max-width: 1080px) {
   .days, .free {

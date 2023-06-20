@@ -6,7 +6,22 @@
   border-radius: 10px;
   border: 3px solid rgba(230,230,227,255);
   display: flex;
-  flex-direction: column; /* Arrange elements vertically */
+  flex-direction: column;
+  position: relative; /* Arrange elements vertically */
+}
+
+.badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 80px; 
+  height: 20px;
+  background-color: red;
+  color: white;
+  padding: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 4px;
 }
 
 img {
