@@ -1,11 +1,91 @@
-.top-nav {
-    position: fixed;
-    height: 60px;
-    top: 0;
-    left: 0;
-    width: calc(~'100% - 370px');
-    background-color: rgb(0, 0, 0);
-    z-index: 1000;
-    opacity: 0.85;
-    white-space: nowrap;
+#top-nav{
+  background-color: rgba(19, 16, 16, 0.753);
+  height:70px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-left:10px;
+  z-index: 1;
+}
+
+#badge {
+  transform: rotate(180deg);
+  z-index: 2;
+  position: fixed;
+  top: 83px; left: 10px;
+  width: 100px;
+}
+
+.header-info {
+  color: gray;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+  width: calc(~'100% - 520px');
+  position: fixed;
+  top: 0;
+  left: 140px;
+  z-index: 2;
+  border: none;
+  border-bottom: 1px solid gray;
+}
+
+.phone, .days, .free {
+  margin: 0;
+}
+
+#bookmark-1 {
+  position: absolute;
+  top: -30px;
+  left: -20px;
+  width: 180px;
+  z-index: 2;
+}
+
+#bookmark-2 {
+  position: fixed;
+  top: 700px;
+  left: -20px;
+  width: 180px;
+  z-index: 1000;
+  transform: rotate(180deg);
+}
+
+#rect {
+  position: absolute;
+  top: 10px;
+  left: 35px;
+  z-index: 3;
+  font-size: 16px;
+
+  h3 {
+  margin: 0;
+  line-height: 1.2;
+  color: white;
+  font-weight: 400;
+}
+}
+
+.bottomText{
+  color: rgb(255, 255, 255);
+  height: 40px;
+  position: absolute;
+  top:25px; 
+  left: 140px;
+  z-index: 2;
+}
+
+.login-btn {
+  height: 30px;
+  text-decoration: none;
+}
+
+
+
+@media (max-width: 1080px) {
+  .days, .free {
+    display: none;
   }
+}
