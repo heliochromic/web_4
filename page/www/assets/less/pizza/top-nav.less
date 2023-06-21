@@ -46,7 +46,7 @@
 
 #bookmark-2 {
   position: fixed;
-  bottom: -20px; /* Adjust the value as needed */
+  bottom: -20px;
   left: -30px;
   width: 180px;
   z-index: 1000;
@@ -56,7 +56,7 @@
 #bottom-sale {
   position: fixed;
 
-  top: 90%; /* Adjust the value as needed */
+  top: 90%;
   left: -30px;
   width: 180px;
   z-index: 1005;
@@ -84,7 +84,9 @@
 }
 }
 
-
+#menu-btn {
+  display: none;
+}
 
 .bottomText{
   color: rgb(255, 255, 255);
@@ -109,5 +111,23 @@ hr.dashed {
 @media (max-width: 1080px) {
   .days, .free {
     display: none;
+  }
+}
+
+@media (max-width: 750px) {
+  .phone {
+    display: none;
+  }
+}
+
+@media (max-width: 720px) {
+  .header-info {
+    width: 100%;
+    justify-content: left;
+  }
+
+  #menu-btn {
+    display: block;
+    margin-left: 10px;
   }
 }

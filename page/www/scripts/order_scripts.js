@@ -274,3 +274,8 @@ function removeAllItems() {
   document.getElementById("order-list").innerHTML = ``;
   localStorage.clear();
 }
+
+function showMenu() {
+  var rightSide = document.getElementById("right-side");
+  rightSide.classList.toggle("show");
+}
